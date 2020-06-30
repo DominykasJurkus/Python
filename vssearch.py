@@ -6,4 +6,7 @@ def search4vowels():
     for vowel in found:
         print(vowel)
 
+def search4letters(phrase:str, letters:str) -> set:
+    return set(letters).intersection(set(phrase))
+
 search4vowels()
