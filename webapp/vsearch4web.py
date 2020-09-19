@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, escape
 
 app = Flask(__name__)
 
@@ -31,7 +31,7 @@ def search4letters(phrase:str, letters:str='aeiou') -> set:
 def view_the_log() -> str:
     with open('vsearch.log') as log:
         contents = log.read()
-    return contents
+    return escape(contents)
 
 if __name__ == '__main__': 
     app.run(debug=True)
